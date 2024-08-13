@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    color-scheme: light dark;
+    @apply text-sm md:text-base;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    @apply font-bellefair uppercase;
+}
+
+h5,
+.subheading-1,
+.subheading-2,
+.nav-text {
+    @apply font-barlow-condensed uppercase;
+}
