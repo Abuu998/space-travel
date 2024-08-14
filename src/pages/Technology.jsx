@@ -2,7 +2,7 @@
 
 function Technology() {
     return (
-        <div>Technology</div>
+        <section>Technology</section>
     )
 }
 

@@ -3,7 +3,7 @@
 function NavText({ className, children, ...props }) {
     return (
         <div
-            className={`tracking-[2.8px] ${className}`}
+            className={`tracking-[2.8px] uppercase ${className}`}
             {...props}
         >
             {children}

@@ -20,3 +20,81 @@ h5,
 .nav-text {
     @apply font-barlow-condensed uppercase;
 }
+
+
+/* Backgrounds for pages */
+#home {
+    --background-image: url(./assets/home/background-home-mobile.jpg);
+}
+
+#crew {
+    --background-image: url(./assets/crew/background-crew-mobile.jpg);
+}
+
+#destination {
+    --background-image: url(./assets/destination/background-destination-mobile.jpg);
+}
+
+#technology {
+    --background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+#home,
+#crew,
+#destination,
+#technology {
+    background: var(--background-image) center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 100dvh;
+    min-height: 100vh;
+}
+
+.line {
+    width: min(40ch, 150px);
+}
+
+.mobile-navlink:has(a.active) {
+    @apply after:absolute after:top-0 after:right-0 after:w-[4px] after:h-full after:bg-white after:rounded-md;
+}
+
+.main-navlink:has(a.active) {
+    @apply after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px] after:bg-white after:rounded-md;
+}
+
+@media screen and (min-width: 640px) {
+    #home {
+        --background-image: url(./assets/home/background-home-tablet.jpg);
+    }
+    
+    #crew {
+        --background-image: url(./assets/crew/background-crew-tablet.jpg);
+    }
+    
+    #destination {
+        --background-image: url(./assets/destination/background-destination-tablet.jpg);
+    }
+    
+    #technology {
+        --background-image: url(./assets/technology/background-technology-tablet.jpg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #home {
+        --background-image: url(./assets/home/background-home-desktop.jpg);
+    }
+    
+    #crew {
+        --background-image: url(./assets/crew/background-crew-desktop.jpg);
+    }
+    
+    #destination {
+        --background-image: url(./assets/destination/background-destination-desktop.jpg);
+    }
+    
+    #technology {
+        --background-image: url(./assets/technology/background-technology-desktop.jpg);
+    }
+}

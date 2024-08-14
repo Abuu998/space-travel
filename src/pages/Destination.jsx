@@ -2,7 +2,7 @@
 
 function Destination() {
     return (
-        <div>Destination</div>
+        <section>Destination</section>
     )
 }
 

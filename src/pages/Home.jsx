@@ -1,14 +1,19 @@
-import MainContainer from "../components/container/MainContainer"
+import { useState, useEffect } from "react"
+import Container from "../components/container/MainContainer"
 import MainHeading from "../components/text/MainHeading"
-// import Heading5 from "../components/text/Heading5"
+import { useLocation } from "react-router-dom"
 
 
 function Home() {
+    const location = useLocation()
+
     return (
-        <section>
-            <MainContainer className="border border-solid border-red-500">
-                <MainHeading>Home Page</MainHeading>
-            </MainContainer>
+        <section className="">
+            <Container>
+                <MainHeading>
+                    home
+                </MainHeading>
+            </Container>
         </section>
     )
 }
