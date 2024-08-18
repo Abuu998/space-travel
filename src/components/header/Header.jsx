@@ -34,7 +34,7 @@ function Header() {
     const { isOpen, open } = useMobileNav()
 
     return (
-        <header className="py-4 sm:py-0 md:py-4 sm:flex items-center justify-between">
+        <header className="py-4 sm:py-0 md:py-4 sm:flex items-center justify-between sticky top-0 w-full">
             <Container className="flex items-center justify-between">
                 <img 
                     src={Logo}
