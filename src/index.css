@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     color-scheme: light dark;
     @apply text-base md:text-lg text-secondary;
@@ -64,8 +68,31 @@ section  {
     @apply after:absolute after:top-0 after:right-0 after:w-[4px] after:h-full after:bg-white after:rounded-md;
 }
 
-.main-navlink:has(a.active) {
-    @apply after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px] after:bg-white after:rounded-md;
+.main-navlink:has(a.active),
+li.active {
+    @apply after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px] text-white after:bg-white after:rounded-md;
+}
+
+li:hover :after,
+li:hover :before {
+    @apply w-0 transition-all duration-500 ease-in-out;
+    animation: beforeAfter 1s linear ease-in-out;
+}
+
+@keyframes beforeAfter {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+li:hover {
+    @apply sm:after:absolute sm:after:bottom-0 sm:after:left-0 sm:after:w-full sm:after:h-[4px] sm:after:bg-secondary/75 sm:after:rounded-md;
 }
 
 .main-btn {
