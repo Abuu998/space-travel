@@ -1,4 +1,4 @@
-
+import { makeTwoNumber } from "../../helpers/utils"
 
 function TitleWithNumbers({ className, number, label, ...props }) {
     return (
@@ -6,7 +6,7 @@ function TitleWithNumbers({ className, number, label, ...props }) {
             className={`font-barlow-condensed uppercase tracking[2px] text-[1.75rem] ${className}`}
             {...props}
         >
-            <span className="text-white/25 mr-[.6rem] font-semibold">{number}</span>
+            <span className="text-white/25 mr-[.6rem] font-semibold">{makeTwoNumber(number)}</span>
             <span>{label}</span>
         </div>
     )

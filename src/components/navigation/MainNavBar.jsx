@@ -51,8 +51,8 @@ function MainNavBar() {
                     <ul className="flex gap-6 md:gap-8 items-center justify-start">
                         {
                             pages.map((p, index) => (
-                                <li key={p} className="relative py-8 main-navlink transition-all duration-300 ease-in-out">
-                                    <NavLink to={p === "Home" ? "/" : `/${p.toLowerCase()}`}>
+                                <li key={p} className="relative main-navlink transition-all duration-300 ease-in-out">
+                                    <NavLink to={p === "Home" ? "/" : `/${p.toLowerCase()}`} className="py-8 inline-block">
                                         <NavText className="text-lg font-semibold lg:flex lg:items-center gap-2">
                                             <span className="hidden lg:inline-block">{makeTwoNumber(index)}</span>
                                             <span className="ml-4 sm:ml-0">{p}</span>

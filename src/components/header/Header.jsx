@@ -24,7 +24,6 @@ const pathVariant = {
         opacity: 1,
         pathLength: 1,
         transition: {
-            delay: 0.5,
             duration: 1,
             ease: "easeInOut"
         }

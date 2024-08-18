@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         "barlow": ["'Barlow'", "sans-serif"],
         "barlow-condensed": ["'Barlow Condensed'", "sans-serif"],
-        "bellefair": ["'Bellefair'", "serif"],
+        "bellefair": ["'Bellefair'", "sans-serif"],
       },
       colors: {
         "primary": "#0B0D17",
