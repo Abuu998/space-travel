@@ -90,6 +90,9 @@ li:hover :before {
 
 }
 
+.slider-ind.active {
+    @apply bg-white;
+}
 
 li:hover {
     @apply sm:after:absolute sm:after:bottom-0 sm:after:left-0 sm:after:w-full sm:after:h-[4px] sm:after:bg-secondary/75 sm:after:rounded-md;
