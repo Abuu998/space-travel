@@ -45,7 +45,7 @@ const pathVariant = {
 }
 
 
-const pages = ["Home", "Destination", "Crew", "Technology"]
+const PAGES = ["Home", "Destination", "Crew", "Technology"]
 
 
 function Mobile() {
@@ -83,9 +83,9 @@ function Mobile() {
                             </motion.svg>
                         </div>
                         <ul className="mt-12 pl-8 grid gap-5">
-                            { pages.map((p, index) => (
-                                <li key={p} className="relative mobile-navlink">
-                                    <NavLink to={p === "Home" ? "/" : `/${p.toLowerCase()}`} onClick={() => close()}>
+                            { PAGES.map((p, index) => (
+                                <li key={p} className="relative mobile-navlink" onClick={() => close()}>
+                                    <NavLink to={p === "Home" ? "/" : `/${p.toLowerCase()}`}>
                                         <NavText className="text-lg font-semibold">
                                             <span>{makeTwoNumber(index)}</span>
                                             <span className="ml-4">{p}</span>

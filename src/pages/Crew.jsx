@@ -3,8 +3,9 @@ import { useSelector } from "react-redux"
 import { AnimatePresence, motion } from "framer-motion"
 import Container from "../components/container/MainContainer"
 import TitleWithNumbers from "../components/text/TitleWithNumbers"
+import Slider from "../components/slider/Slider"
 import CrewDetails from "../components/crew/CrewDetails"
-import Slider from "../components/crew/slider/Slider"
+import SliderIndicator from "../components/slider/SliderIndicator"
 
 
 const imageVariant = {
@@ -46,6 +47,18 @@ function Crew() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const crew = useSelector(state => state.crew)
 
+
+    const sliderItems = ({ data, setSliderIndex }) => {
+
+        return data?.map((item, itemIndex) => (
+            <SliderIndicator 
+                key={`${item?.name}-unique-key`}
+                className={itemIndex === currentIndex ? "active" : ""} 
+                onClick={() => setSliderIndex(itemIndex)}
+            />
+        ))
+    }
+
     return (
         <section>
             <Container>
@@ -58,7 +71,7 @@ function Crew() {
                     <div className="border-b-2 border-b-solid border-b-secondary/5 sm:border-none">
                         <AnimatePresence mode="wait">
                             <motion.img
-                                className="block object-contain w-[250px] sm:w-[300px] lg:w-[450px] mx-auto aspect-square"
+                                className="block object-contain w-[250px] sm:w-[300px] lg:w-[450px] mx-auto aspect-square sm:-mb-12"
                                 src={crew[currentIndex]?.images?.png}
                                 alt={`${crew[currentIndex]?.name} Portrait`}
                                 variants={imageVariant}
@@ -72,9 +85,10 @@ function Crew() {
                     <div className="flex flex-col sm:flex-col-reverse gap-8 text-center lg:text-start">
                         <Slider 
                             changeIndex={setCurrentIndex} 
+                            data={crew}
                             interval={10000}
                         >
-                            { crew }
+                            { sliderItems }
                         </Slider>
                         <CrewDetails member={crew[currentIndex]} />
                     </div>

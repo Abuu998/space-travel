@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react"
-import SliderIndicator from "./SliderIndicator"
 
 function Slider({ 
     className="", 
     autoPlay=true, 
-    interval=3500, 
-    children: slides,
+    interval=3500,
+    data=[],
+    children,
     changeIndex=()=>{},
     ...props 
 }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const next = () => {
-        setCurrentIndex(curr => curr === slides.length - 1 ? 0 : curr + 1)
+        setCurrentIndex(curr => curr === data.length - 1 ? 0 : curr + 1)
     }
 
     // const previous = () => {
@@ -33,16 +33,10 @@ function Slider({
 
     return (
         <div
-            className="flex items-center justify-center gap-4 lg:mt-16 lg:justify-start"
+            className={`flex items-center justify-center gap-4 lg:mt-16 lg:justify-start ${className}`}
+            {...props}
         >
-            {slides.map((m, index) => (
-                <SliderIndicator 
-                    key={m?.role}
-                    className={index === currentIndex ? "active" : ""}
-                    onClick={() => setCurrentIndex(index)}
-                    {...props}
-                />
-            ))}
+            {children({ data, setSliderIndex: setCurrentIndex })}
         </div>
     )
 }
