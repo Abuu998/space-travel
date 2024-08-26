@@ -56,7 +56,7 @@ function Mobile() {
             {
                 isOpen && (
                     <motion.div
-                        className="fixed top-0 bottom-0 right-0 left-1/4 bg-white/5 backdrop-blur-xl sm:hidden"
+                        className="fixed top-0 bottom-0 right-0 left-1/4 bg-white/5 backdrop-blur-xl sm:hidden z-50"
                         variants={container}
                         initial="hidden"
                         animate="visible"
