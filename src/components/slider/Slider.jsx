@@ -33,7 +33,7 @@ function Slider({
 
     return (
         <div
-            className={`flex items-center justify-center gap-4 lg:mt-16 lg:justify-start ${className}`}
+            className={`flex items-center justify-center gap-4 ${className}`}
             {...props}
         >
             {children({ data, setSliderIndex: setCurrentIndex })}

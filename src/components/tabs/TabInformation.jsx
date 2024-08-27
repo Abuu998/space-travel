@@ -13,7 +13,6 @@ const containerVars = {
                 ease: "easeInOut",
                 type: "spring",
                 stiffness: 100,
-                // delay: 0.5,
                 damping: 20
             },
             ease: "easeInOut",
@@ -22,7 +21,7 @@ const containerVars = {
     },
     exit: {
         opacity: 0,
-        x: "-100vw",
+        y: "100vh",
         transition: {
             x: {
                 ease: "easeInOut",
