@@ -2,7 +2,7 @@
 
 function MainContainer({ className, children }) {
     return (
-        <div className={`container px-4 mx-auto ${className}`}>
+        <div className={`border border-dotted border-red-500 px-4 mx-auto ${className}`}>
             {children}
         </div>
     )

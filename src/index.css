@@ -15,20 +15,58 @@ h1,
 h2,
 h3,
 h4 {
-    @apply font-bellefair uppercase text-white;
+    @apply font-bellefair uppercase text-white text-balance;
 }
 
 h5,
 .subheading-1,
 .subheading-2,
 .nav-text {
-    @apply font-barlow-condensed uppercase;
+    @apply font-barlow-condensed uppercase text-balance;
 }
 
 
 section  {
     @apply py-12;
 }
+
+@layer utilities {
+    .content-grid {
+        --padding-size: 1rem;
+        --content-max-width: 1200px;
+        --breakout-max-width: 1300px;
+        
+        --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+        
+        display: grid;
+        grid-template-columns: 
+            [full-width-start] minmax(var(--padding-size), 1fr)
+            [breakout-start] minmax(0, var(--breakout-size))
+            [content-start] min(100% - var(--padding-size) * 2, var(--content-max-width)) [content-end]
+            minmax(0, var(--breakout-size)) [breakout-end]
+            minmax(var(--padding-size), 1fr) [full-width-end]
+        ;
+    }
+
+    .content-grid > :not(.breakout, .full-width),
+    .full-width > :not(.breakout, .full-width) {
+        grid-column: content;
+    }
+    
+    .breakout {
+        grid-column: breakout;
+    }
+    
+    .full-width {
+        grid-column: full-width;
+    
+        display: grid;
+        grid-template-columns: inherit;
+    }
+}
+
+
+
 
 
 /* Backgrounds for pages */
